@@ -27,10 +27,32 @@ namespace GradeBook
 
       public void ShowGrades()
       {
+        Console.WriteLine("Your grades are:");
         foreach (var grade in grades)
         {
         Console.WriteLine(grade);            
         }
+      }
+
+      public void ShowStats()
+      {
+        var sum = 0.0;
+        var highestGrade = double.MinValue;
+        var lowestGrade = double.MaxValue;
+
+        foreach(var grade in grades)
+        {
+          sum += grade;
+          highestGrade = Math.Max(grade, highestGrade);
+          lowestGrade = Math.Min(grade, lowestGrade);
+        }
+
+        var ave = sum / grades.Count;
+
+        Console.WriteLine($"Your average grade is {ave:N2}");
+        Console.WriteLine($"Your highest grade is {highestGrade}");
+        Console.WriteLine($"Your lowest grade is {lowestGrade}");
+
       }
 
       // field or global variable??
