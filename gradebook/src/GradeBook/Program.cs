@@ -5,10 +5,19 @@ namespace GradeBook
 {
   class Program
     {
+        // static methods are associated with the class so cannot be called on its intance, 
+        // methods and fields that does not have this keyword can be referenced objectively (book.ShowGrades())
+
+        // instead, they are called onto the actual class, like Program.Main()
+        // think of it as class and instance methods.
         static void Main(string[] args)
         {
-            var book = new Book();
+            // instantiating a class
+            var book = new Book("BCC Grade Book");
             book.AddGrade(92.3);
+            book.AddGrade(89.5);
+            book.AddGrade(75.9);
+            book.ShowGrades();
 
             // creates a new List that would contain double data types
             var grades = new List<double>() {12.5,69.2,42.1,21.4};
