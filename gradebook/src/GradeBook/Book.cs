@@ -25,7 +25,14 @@ namespace GradeBook
       // public List<double> grades;
       public void AddGrade(double grade)
       {
-        grades.Add(grade);
+        if (grade <= 100 && grade >= 0)
+        {
+          grades.Add(grade);
+        }
+        else
+        {
+          Console.WriteLine("Grade out of range, did not add grade.");
+        }
       }
 
       public void ShowGrades()

@@ -25,7 +25,7 @@ namespace GradeBook.Tests
                 return 3;
             }
 
-    [Fact]
+        [Fact]
         public void CSharpCanPassByRef()
         {
             var book1 = GetBook("Book 1");
@@ -67,12 +67,12 @@ namespace GradeBook.Tests
             Assert.Equal("PHIL", newName);
         }
 
-    private string  MakeUppercase(string name)
-    {
-        return name.ToUpper();
-    }
+        private string  MakeUppercase(string name)
+        {
+            return name.ToUpper();
+        }
 
-    [Fact]
+        [Fact]
         public void CanSetNameFromReference()
         {
             var book1 = GetBook("Book 1");
@@ -109,9 +109,9 @@ namespace GradeBook.Tests
         }
     // Since this method is not a test, it should not have
     // the [Fact] attribute to it
-    Book GetBook(string name)
-    {
-        return new Book(name);
-    }
+        Book GetBook(string name)
+        {
+            return new Book(name);
+        }
   }
 }
