@@ -14,7 +14,7 @@ namespace GradeBook
         grades = new List<double>();
         // this is an implicit variable referring to the object it was called onto
         // always available to methods and constructors
-        this.name = name;
+        Name = name;
 
         // result = new Stats();
       }
@@ -79,7 +79,11 @@ namespace GradeBook
 
       // private keyword means only this class has access to this field
       // or method.
-      private string name;
+      // If this is a public field, its name should be capitalized. Convention
+      // dictates that any public field or method should be capitalized.
+
+      // private string name;
+      public string Name;
       // private Stats result;
     }
 }
