@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
-  class Book
+  // Was set to public to allow test file to access this class
+  public class Book
     {
       // explicit constructor
       // - should not have a return type
@@ -14,6 +15,8 @@ namespace GradeBook
         // this is an implicit variable referring to the object it was called onto
         // always available to methods and constructors
         this.name = name;
+
+        // result = new Stats();
       }
 
       // public keyword means that any code outside this class can use it.
@@ -34,26 +37,33 @@ namespace GradeBook
         }
       }
 
-      public void ShowStats()
+    // This method returns an object class of Stats, can also be any other type of data.
+      public Stats GetStats()
       {
+        var result = new Stats();
         var sum = 0.0;
-        var highestGrade = double.MinValue;
-        var lowestGrade = double.MaxValue;
+        result.High = double.MinValue;
+        result.Low = double.MaxValue;
 
         foreach(var grade in grades)
         {
           sum += grade;
-          highestGrade = Math.Max(grade, highestGrade);
-          lowestGrade = Math.Min(grade, lowestGrade);
+          result.High = Math.Max(grade, result.High);
+          result.Low = Math.Min(grade, result.Low);
         }
 
-        var ave = sum / grades.Count;
+        result.Average = sum / grades.Count;
 
-        Console.WriteLine($"Your average grade is {ave:N2}");
-        Console.WriteLine($"Your highest grade is {highestGrade}");
-        Console.WriteLine($"Your lowest grade is {lowestGrade}");
-
+        return result;
       }
+
+      // public void ShowStats()
+      // {
+      //   Console.WriteLine($"Your average grade is {result.Average:N2}");
+      //   Console.WriteLine($"Your highest grade is {result.High}");
+      //   Console.WriteLine($"Your lowest grade is {result.Low}");
+
+      // }
 
       // field or global variable??
       // would be accessible to all the methods defined in this class
@@ -70,5 +80,6 @@ namespace GradeBook
       // private keyword means only this class has access to this field
       // or method.
       private string name;
+      // private Stats result;
     }
 }
