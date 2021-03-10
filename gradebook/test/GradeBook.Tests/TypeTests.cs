@@ -7,7 +7,7 @@ namespace GradeBook.Tests
     public class TypeTests
     {
         [Fact]
-        public void Test1()
+        public void CSharPassByRefOnInt()
         {
             var x = GetInt();
             SetInt(ref x);
@@ -58,6 +58,21 @@ namespace GradeBook.Tests
         }
 
         [Fact]
+        public void StringsBehaveLikeValueTypes()
+        {
+            // strings are immutable
+            string name = "Phil";
+            var newName = MakeUppercase(name);
+
+            Assert.Equal("PHIL", newName);
+        }
+
+    private string  MakeUppercase(string name)
+    {
+        return name.ToUpper();
+    }
+
+    [Fact]
         public void CanSetNameFromReference()
         {
             var book1 = GetBook("Book 1");
