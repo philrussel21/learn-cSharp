@@ -146,8 +146,31 @@ namespace GradeBook
       // If this is a public field, its name should be capitalized. Convention
       // dictates that any public field or method should be capitalized.
 
-      // private string name;
-      public string Name;
+      // Properties
+      public string Name
+      {
+        // Getter
+        get
+        {
+          return name;
+        }
+        // Setter
+        set
+        {
+          // The value keyword represents what this property is
+          // being assigned to, sortof like a variable.
+          // Check to validate the value
+          if(!String.IsNullOrEmpty(value))
+          {
+            name = value;
+          }
+          else
+          {
+            throw new NullReferenceException($"Invalid {nameof(value)} cannot be null or empty.");
+          }
+        }
+      }
+      private string name;
       // private Stats result;
     }
 }
