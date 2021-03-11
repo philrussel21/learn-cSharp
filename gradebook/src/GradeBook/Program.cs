@@ -14,12 +14,25 @@ namespace GradeBook
         {
             // instantiating a class
             var book = new Book("BCC Grade Book");
-            book.AddGrade(92.3);
-            book.AddGrade(89.5);
-            book.AddGrade(75.9);
-            book.ShowGrades();
-            var result = book.GetStats();
+            // book.AddGrade(92.3);
+            // book.AddGrade(89.5);
+            // book.AddGrade(75.9);
+            // book.ShowGrades();
+            // var result = book.GetStats();
+
+            Console.WriteLine("Welcome to this Grade Book. Please input grades and press \"q\" to exit");
+            var input = Console.ReadLine();
+            while (input != "q")
+            {
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
+                Console.WriteLine("Please put another grade, or \"q\" to exit.");
+                input = Console.ReadLine();
+            }
             
+            var result = book.GetStats();
+
+
             // book.ShowStats();
 
             Console.WriteLine($"Your highest grade is {result.High}");
