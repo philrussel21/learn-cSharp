@@ -34,14 +34,11 @@ namespace GradeBook.Tests
         {
             //Given
             var book = new Book("Invalid Grade");
-            book.AddGrade(95.4);
-            book.AddGrade(105);
 
             //When
-            var result = book.GetStats();
 
             //Then
-            Assert.Equal(95.4, result.High,1);
+            Assert.Throws<ArgumentException>(() => book.AddGrade(105));
         }
 
         [Fact]
