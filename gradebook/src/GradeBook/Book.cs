@@ -90,6 +90,29 @@ namespace GradeBook
 
         result.Average = sum / grades.Count;
 
+        // Enhanced switch statement
+        switch (result.Average)
+        {
+            case var g when g >= 95:
+              result.Letter = 'A';
+              break;
+            case var g when g >= 90:
+              result.Letter = 'B';
+              break;
+            case var g when g >= 85:
+              result.Letter = 'C';
+              break;
+            case var g when g >= 80:
+              result.Letter = 'D';
+              break;
+            case var g when g >= 75:
+              result.Letter = 'E';
+              break;              
+            default:
+              result.Letter = 'F';
+              break;
+        }
+
         return result;
       }
 

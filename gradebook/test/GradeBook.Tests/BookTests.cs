@@ -24,6 +24,7 @@ namespace GradeBook.Tests
 
             // Assert
             Assert.Equal(77.97, result.Average, 2);
+            Assert.Equal('E', result.Letter);
             Assert.Equal(69.2, result.Low,1);
             Assert.Equal(89.2, result.High,1);
         }
@@ -31,30 +32,30 @@ namespace GradeBook.Tests
         [Fact]
         public void BookDoesNotAddStats()
         {
-        //Given
-        var book = new Book("Invalid Grade");
-        book.AddGrade(95.4);
-        book.AddGrade(105);
+            //Given
+            var book = new Book("Invalid Grade");
+            book.AddGrade(95.4);
+            book.AddGrade(105);
 
-        //When
-        var result = book.GetStats();
+            //When
+            var result = book.GetStats();
 
-        //Then
-        Assert.Equal(95.4, result.High,1);
+            //Then
+            Assert.Equal(95.4, result.High,1);
         }
 
         [Fact]
         public void BookAddsGradeByLetter()
         {
         //Given
-        var book = new Book("Letter Grade");
-        book.AddLetterGrade('A');
+            var book = new Book("Letter Grade");
+            book.AddLetterGrade('A');
 
-        //When
-        var result = book.GetStats();
-        
-        //Then
-        Assert.Equal(95, result.Average);
+            //When
+            var result = book.GetStats();
+            
+            //Then
+            Assert.Equal(95, result.Average);
         }
     }
 }

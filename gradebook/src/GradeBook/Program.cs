@@ -22,9 +22,10 @@ namespace GradeBook
             
             // book.ShowStats();
 
-            Console.WriteLine($"Your average grade is {result.Average:N2}");
             Console.WriteLine($"Your highest grade is {result.High}");
             Console.WriteLine($"Your lowest grade is {result.Low}");
+            Console.WriteLine($"Your average grade is {result.Average:N2}");
+            Console.WriteLine($"Your overall grade is {result.Letter}");
 
 
 
