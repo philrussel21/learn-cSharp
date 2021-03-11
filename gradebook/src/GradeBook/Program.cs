@@ -32,7 +32,11 @@ namespace GradeBook
                 // WIll throw an exception when grade is invalid - see method for more info
                 book.AddGrade(grade);
                 }
-                catch(Exception e)
+                catch(ArgumentException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                catch(FormatException e)
                 {
                     Console.WriteLine(e.Message);
                 }
