@@ -19,6 +19,35 @@ namespace GradeBook
         // result = new Stats();
       }
 
+      public void AddLetterGrade(char let)
+      {
+        switch (let)
+        {
+            case 'A':
+              AddGrade(95);
+              break;
+            case 'B':
+              AddGrade(90);
+              break;
+            case 'C':
+              AddGrade(85);
+              break;
+            case 'D':
+              AddGrade(80);
+              break;
+            case 'E':
+              AddGrade(75);
+              break;
+            case 'F':
+              AddGrade(70);
+              break;
+            default:
+              Console.WriteLine("Invalid letter provided.");
+              break;
+        }
+      }
+
+
       // public keyword means that any code outside this class can use it.
       // can be used to make methods and fields public BUT generally discouraged
       // to let fields be public, sample:

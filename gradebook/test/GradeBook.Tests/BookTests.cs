@@ -42,5 +42,19 @@ namespace GradeBook.Tests
         //Then
         Assert.Equal(95.4, result.High,1);
         }
+
+        [Fact]
+        public void BookAddsGradeByLetter()
+        {
+        //Given
+        var book = new Book("Letter Grade");
+        book.AddLetterGrade('A');
+
+        //When
+        var result = book.GetStats();
+        
+        //Then
+        Assert.Equal(95, result.Average);
+        }
     }
 }
