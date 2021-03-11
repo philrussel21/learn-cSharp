@@ -172,5 +172,12 @@ namespace GradeBook
       }
       private string name;
       // private Stats result;
+
+      // Readonly - can only be assigned in constructor
+      // readonly string category = "Math";
+
+      // Constant - can never be reassigned but can be viewed if given public keyword
+      //          - usually named with all caps to represent const
+      public const string CATEGORY = "School of Science";
     }
 }
