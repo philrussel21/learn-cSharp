@@ -19,7 +19,11 @@ namespace GradeBook
         // result = new Stats();
       }
 
-      public void AddLetterGrade(char let)
+      // Even though you have 2 methods that have the same name,
+      // C# knows which is which because they accept different
+      // types of paramaters so it can be distinguished. This is
+      // called Overloading Methods.
+      public void AddGrade(char let)
       {
         switch (let)
         {

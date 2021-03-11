@@ -46,7 +46,7 @@ namespace GradeBook.Tests
         {
         //Given
             var book = new Book("Letter Grade");
-            book.AddLetterGrade('A');
+            book.AddGrade('A');
 
             //When
             var result = book.GetStats();
