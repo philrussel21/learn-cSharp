@@ -24,8 +24,19 @@ namespace GradeBook
             var input = Console.ReadLine();
             while (input != "q")
             {
+                try
+                {
+                // Will throw an exception when given different format
+                // that cannot be converted to double type
                 var grade = double.Parse(input);
+                // WIll throw an exception when grade is invalid - see method for more info
                 book.AddGrade(grade);
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+
                 Console.WriteLine("Please put another grade, or \"q\" to exit.");
                 input = Console.ReadLine();
             }
