@@ -60,7 +60,8 @@ namespace GradeBook
         }
         else
         {
-          Console.WriteLine("Grade out of range, did not add grade.");
+          // Console.WriteLine("Grade out of range, did not add grade.");
+          throw new ArgumentException($"Invalid {nameof(grade)}");
         }
       }
 
