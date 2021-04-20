@@ -14,7 +14,7 @@ namespace GradeBook
         static void Main(string[] args)
         {
             // instantiating a class
-            var book = new Book("BCC Grade Book");
+            var book = new InMemoryBook("BCC Grade Book");
             // book.AddGrade(92.3);
             // book.AddGrade(89.5);
             // book.AddGrade(75.9);
@@ -30,7 +30,7 @@ namespace GradeBook
             // book.ShowStats();
 
             // Can only see and cannot be reassigned, has to be called on the class
-            // Console.WriteLine(Book.CATEGORY);
+            // Console.WriteLine(InMemoryBook.CATEGORY);
 
 
             Console.WriteLine($"Your highest grade is {result.High}");
@@ -63,7 +63,7 @@ namespace GradeBook
             // Console.WriteLine($"Your lowest grade is {lowestGrade}");
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(InMemoryBook book)
         {
             while (true)
             {

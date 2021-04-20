@@ -38,9 +38,9 @@ namespace GradeBook.Tests
 
         // By using the ref keyword, you're passing the reference
         // as parameter instead of the value.
-        void GetBookSetNameWithRef(ref Book book, string name)
+        void GetBookSetNameWithRef(ref InMemoryBook book, string name)
         {
-            book = new Book(name);
+            book = new InMemoryBook(name);
         }
 
         [Fact]
@@ -52,9 +52,9 @@ namespace GradeBook.Tests
             Assert.Equal("Book 1", book1.Name);
         }
 
-        void GetBookSetName(Book book, string name)
+        void GetBookSetName(InMemoryBook book, string name)
         {
-            book = new Book(name);
+            book = new InMemoryBook(name);
         }
 
         [Fact]
@@ -81,7 +81,7 @@ namespace GradeBook.Tests
             Assert.Equal("New Name", book1.Name);
         }
 
-        void SetName(Book book, string name)
+        void SetName(InMemoryBook book, string name)
         {
             book.Name = name;
         }
@@ -109,9 +109,9 @@ namespace GradeBook.Tests
         }
     // Since this method is not a test, it should not have
     // the [Fact] attribute to it
-        Book GetBook(string name)
+        InMemoryBook GetBook(string name)
         {
-            return new Book(name);
+            return new InMemoryBook(name);
         }
   }
 }

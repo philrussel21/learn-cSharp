@@ -13,7 +13,7 @@ namespace GradeBook.Tests
 
             // By default, the compiler wouldn't know what this class is bec it was from another project,
             // in order to create a reference, you can use the terminal cmd `dotnet add reference path_to_csProj` to this curr dir
-            var book = new Book("New Book");
+            var book = new InMemoryBook("New Book");
             book.AddGrade(89.2);
             book.AddGrade(69.2);
             book.AddGrade(75.5);
@@ -33,7 +33,7 @@ namespace GradeBook.Tests
         public void BookDoesNotAddStats()
         {
             //Given
-            var book = new Book("Invalid Grade");
+            var book = new InMemoryBook("Invalid Grade");
 
             //When
 
@@ -45,7 +45,7 @@ namespace GradeBook.Tests
         public void BookAddsGradeByLetter()
         {
         //Given
-            var book = new Book("Letter Grade");
+            var book = new InMemoryBook("Letter Grade");
             book.AddGrade('A');
 
             //When
@@ -58,8 +58,8 @@ namespace GradeBook.Tests
         [Fact]
         public void BookThrowsWhenInvalidNameProvided()
         {
-        Assert.Throws<NullReferenceException>(() => new Book(""));
-        Assert.Throws<NullReferenceException>(() => new Book(null));
+        Assert.Throws<NullReferenceException>(() => new InMemoryBook(""));
+        Assert.Throws<NullReferenceException>(() => new InMemoryBook(null));
         }
     }
 }
