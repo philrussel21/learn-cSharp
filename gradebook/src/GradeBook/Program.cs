@@ -22,30 +22,8 @@ namespace GradeBook
             // var result = book.GetStats();
 
             Console.WriteLine("Welcome to this Grade Book. Please input grades and press \"q\" to exit");
-            var input = Console.ReadLine();
-            while (input != "q")
-            {
-                try
-                {
-                // Will throw an exception when given different format
-                // that cannot be converted to double type
-                var grade = double.Parse(input);
-                // WIll throw an exception when grade is invalid - see method for more info
-                book.AddGrade(grade);
-                }
-                catch(ArgumentException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
-                catch(FormatException e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+            EnterGrades(book);
 
-                Console.WriteLine("Please put another grade, or \"q\" to exit.");
-                input = Console.ReadLine();
-            }
-            
             var result = book.GetStats();
 
 
@@ -69,7 +47,7 @@ namespace GradeBook
             // var sum = 0.0;
             // var highestGrade = double.MinValue;
             // var lowestGrade = double.MaxValue;
-            
+
             // foreach (var grade in grades)
             // {
             //     // conditional to find out the highest grade
@@ -83,6 +61,35 @@ namespace GradeBook
             // Console.WriteLine($"Your total grade is {sum:N0} with an average of {ave:N2}");
             // Console.WriteLine($"Your highest grade is {highestGrade}");
             // Console.WriteLine($"Your lowest grade is {lowestGrade}");
+        }
+
+        private static void EnterGrades(Book book)
+        {
+            while (true)
+            {
+                Console.WriteLine("Please put a grade, or \"q\" to exit.");
+                var input = Console.ReadLine();
+                if (input == "q")
+                {
+                    break;
+                }
+                try
+                {
+                    // Will throw an exception when given different format
+                    // that cannot be converted to double type
+                    var grade = double.Parse(input);
+                    // WIll throw an exception when grade is invalid - see method for more info
+                    book.AddGrade(grade);
+                }
+                catch (ArgumentException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+                catch (FormatException e)
+                {
+                    Console.WriteLine(e.Message);
+                }
+            }
         }
     }
 }
