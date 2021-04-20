@@ -5,7 +5,8 @@ namespace GradeBook
 {
   class Program
     {
-        // static methods are associated with the class so cannot be called on its intance, 
+        // Static methods are associated with the class so cannot be called on its instance
+        // and can only be called on the class itself (Program.Main(args)), 
         // methods and fields that does not have this keyword can be referenced objectively (book.ShowGrades())
 
         // instead, they are called onto the actual class, like Program.Main()
