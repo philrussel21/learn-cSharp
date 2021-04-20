@@ -21,9 +21,6 @@ namespace GradeBook
         // virtual keyword is almost the same as abstract meaning the child class would have its own implementation so ignore
         // my (parent's) implementation.
 
-        public virtual Stats GetStats()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract Stats GetStats();
     }
 }

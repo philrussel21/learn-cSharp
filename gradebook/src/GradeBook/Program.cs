@@ -15,14 +15,12 @@ namespace GradeBook
         {
             // instantiating a class
             var book = new InMemoryBook("BCC Grade Book");
-            // book.AddGrade(92.3);
-            // book.AddGrade(89.5);
-            // book.AddGrade(75.9);
-            // book.ShowGrades();
-            // var result = book.GetStats();
+
+            var book2 = new DiskBook("SUPS Grade Book");
 
             Console.WriteLine("Welcome to this Grade Book. Please input grades and press \"q\" to exit");
             EnterGrades(book);
+            EnterGrades(book2);
 
             var result = book.GetStats();
 
