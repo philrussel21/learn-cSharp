@@ -85,7 +85,7 @@ namespace GradeBook
         }
 
         // This method returns an object class of Stats, can also be any other type of data.
-        public Stats GetStats()
+        public override Stats GetStats()
         {
             var result = new Stats();
             var sum = 0.0;

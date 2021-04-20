@@ -63,7 +63,7 @@ namespace GradeBook
             // Console.WriteLine($"Your lowest grade is {lowestGrade}");
         }
 
-        private static void EnterGrades(InMemoryBook book)
+        private static void EnterGrades(IBook book)
         {
             while (true)
             {
