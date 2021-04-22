@@ -23,6 +23,7 @@ namespace GradeBook
             // result = new Stats();
         }
 
+
         // Even though you have 2 methods that have the same name,
         // C# knows which is which because they accept different
         // types of paramaters so it can be distinguished. This is
@@ -87,42 +88,7 @@ namespace GradeBook
         // This method returns an object class of Stats, can also be any other type of data.
         public override Stats GetStats()
         {
-            var result = new Stats();
-            var sum = 0.0;
-            result.High = double.MinValue;
-            result.Low = double.MaxValue;
-
-            foreach (var grade in grades)
-            {
-                sum += grade;
-                result.High = Math.Max(grade, result.High);
-                result.Low = Math.Min(grade, result.Low);
-            }
-
-            result.Average = sum / grades.Count;
-
-            // Enhanced switch statement
-            switch (result.Average)
-            {
-                case var g when g >= 95:
-                    result.Letter = 'A';
-                    break;
-                case var g when g >= 90:
-                    result.Letter = 'B';
-                    break;
-                case var g when g >= 85:
-                    result.Letter = 'C';
-                    break;
-                case var g when g >= 80:
-                    result.Letter = 'D';
-                    break;
-                case var g when g >= 75:
-                    result.Letter = 'E';
-                    break;
-                default:
-                    result.Letter = 'F';
-                    break;
-            }
+            var result = new Stats(grades);
 
             return result;
         }

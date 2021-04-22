@@ -21,6 +21,7 @@ namespace GradeBook
             Console.WriteLine("Welcome to this Grade Book. Please input grades and press \"q\" to exit");
             EnterGrades(book);
             EnterGrades(book2);
+            book2.GetStats();
 
             var result = book.GetStats();
 
